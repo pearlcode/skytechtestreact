@@ -1,25 +1,33 @@
-import React, { Component } from 'react';
-import SearchInput from './components/searchInput'
+import React, {Component} from 'react';
+import SearchPanel from './components/searchPanel'
+import {Route} from 'react-router';
 
-//import './App.css';
+import {BrowserRouter as Router} from 'react-router-dom'
+
+//import './App.css'; // would ideally have styles imported, no time.
+
+// all components should have docblock comments, no time.
 
 class App extends Component {
 
-  constructor(props) {
-      super(props);
+    constructor(props) {
+        super(props);
 
-      this.state = {searchText: '', results:[]}
-  }
+    }
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-        <SearchInput></SearchInput>
-        </header>
-      </div>
-    );
-  }
+
+    render() {
+        return (
+            <div className="App">
+                <Router>
+                    <Route
+                        path="/:query?"
+                        render={({match}) => <SearchPanel match={match} ></SearchPanel>}
+                    />
+                </Router>
+            </div>
+        );
+    }
 }
 
 export default App;

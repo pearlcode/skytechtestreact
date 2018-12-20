@@ -1,1 +1,3 @@
-import SearchResults from './searchResults'
+import SearchResults from './searchResults';
+
+export default SearchResults;

@@ -1,3 +1,3 @@
-import Pagination from './searchInput'
+import Pagination from './pagination'
 
 export default Pagination
